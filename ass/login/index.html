@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Ludiflex | Login & Registration</title>
+    <style>
+        
+        #background-audio {
+            display: none; /* Hide the audio player */
+        }
+        
+        /* Additional CSS for the video */
+    
+        body {
+            overflow: hidden;
+        }
+
+        #background-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: contain;
+            z-index: -1;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <video autoplay loop muted id="background-video" fullscreen>
+        <source src="images/Monkey.mp4" type="video/mp4">
+    </video>
+   
+    <audio autoplay loop id="background-audio">
+        <source src="ass/login/AUDIO/monkey.mp3" type="audio/mpeg">
+    </audio>
+    <div class="wrapper">
+    <!-- Rest of your HTML content -->
+
+
+    <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p> AU JOSE RIZAL CAMPUS</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+
+<!----------------------------- Form box ----------------------------------->    
+    <div class="form-box">
+        <form id="register-form" action="insert_data.php" method="post"></form>
+
+
+        
+        <!------------------- login form -------------------------->
+
+       <div class="login-container" id="login">
+    <div class="top">
+        <span>Don't have an account? <a href="signup.html">Sign Up</a></span> <!-- Change the href attribute to the signup page -->
+        <header>Login</header>
+    </div>
+   <form id="login-form" action="insert_data.php" method="post">
+    <div class="input-box">
+        <input type="text" class="input-field" placeholder="Username or Email" name="username">
+        <i class="bx bx-user"></i>
+    </div>
+    <div class="input-box">
+        <input type="password" class="input-field" placeholder="Password" name="password">
+        <i class="bx bx-lock-alt"></i>
+    </div>
+    <div class="input-box">
+        <button type="submit" class="submit">Sign In</button>
+    </div>
+</form>
+
+    <div class="two-col">
+        <div class="one">
+            <input type="checkbox" id="login-check">
+            <label for="login-check"> Remember Me</label>
+        </div>
+        <div class="two">
+            <label><a href="#">Forgot password?</a></label>
+        </div>
+    </div>
+</div>
+
+        <!------------------- registration form -------------------------->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Firstname">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Lastname">
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Email">
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+
+
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        // Here, you can perform any necessary form validation
+        
+        // Redirect to another page
+        window.location.href = "file:///C:/xampp/htdocs/ass/landing.html"; // Change the URL to the desired page
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var registerForm = document.getElementById("register-form");
+
+        registerForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Retrieve form data
+            var formData = new FormData(registerForm);
+            
+            // Example: Log form data to console
+            for (var pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+
+            // Here, you can use Ajax to submit the form data to your PHP script
+            // For simplicity, I'm just logging the form data to the console
+
+            alert("Registration successful"); // Optional: Show a success message
+            // You can redirect the user to another page here
+            // window.location.href = "index.html"; // Change to your desired page
+        });
+
+        var loginForm = document.querySelector("#login-form");
+
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            alert("Login successful");
+            // You can redirect the user to another page here
+            window.location.href = "ass/index.html"; //Change the (dashboard.html) to ur file
+        });
+    }); 
+
+    // Synchronize audio with video
+    var video = document.getElementById('background-video'); 
+    var audio = document.getElementById('background-audio');
+
+    video.addEventListener('timeupdate', function() {
+        if (!audio.currentTime || audio.currentTime < video.currentTime || audio.currentTime >= video.currentTime + 0.5) {
+            audio.currentTime = video.currentTime;
+        }
+    });
+
+    video.addEventListener('play', function() {
+        audio.play();
+    });
+
+    video.addEventListener('pause', function() {
+        audio.pause();
+    });
+
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        document.getElementById('background-video').requestFullscreen();
+
+        if(i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
+    }
+</script>
+
+
+<script>
+
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+
+</script>
+
+</body>
+</html>
