@@ -1,0 +1,772 @@
+/* GENERAL STYLES */
+
+body {
+ font-family: 'Young Serif', serif;
+  /* sets font family for entire page */
+  background-color:black;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.container {
+  padding: 0;
+}
+
+.row {
+  width: 100%;
+  margin: auto;
+}
+
+/* NAVBAR SECTION */
+.navbar-expand-lg {
+  background-color: #000000;
+  z-index: 2;
+  height: 74px;
+}
+
+.navbar-brand {
+  font-family: 'Young Serif', serif;
+  font-weight: 500;
+  /* font-size: 0.5rem; */
+  font-size: 56px;
+}
+
+.nav-item
+
+/* for each navbar item */ {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.fixed-top {
+  z-index: 11;
+}
+
+
+section{
+  padding: 100px 200px;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #2696E9;
+}
+
+.home:before{
+  z-index: 777;
+  content: '';
+  position: absolute;
+  background: 
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.home .content{
+  z-index: 888;
+  color: #fff;
+  width: 70%;
+  margin-top: 50px;
+  display: none;
+}
+
+.home .content.active{
+  display: block;
+}
+
+.home .content h1{
+  font-size: 4em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+
+.home .content h1 span{
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.home .content p{
+  margin-bottom: 65px;
+}
+
+
+
+.home .media-icons{
+  z-index: 888;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+}
+
+.home .media-icons a{
+  color: #fff;
+  font-size: 1.6em;
+  transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+  transform: scale(1.3);
+}
+
+.home video{
+  z-index: 000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-navigation{
+  z-index: 888;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(80px);
+  margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+  background: #2696E9;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+  margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover{
+  transform: scale(1.2);
+}
+
+.video-slide{
+  position: absolute;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active{
+  clip-path: circle(150% at 0 50%);
+  transition: 2s ease;
+  transition-property: clip-path;
+}
+
+
+
+/* HOME SECTION */
+.home-container {
+  height: 102vh;
+  width: 132vw;
+  display: flex;
+  justify-content: center;
+
+}
+
+#homeSection {
+  position: relative;
+  padding: 20px 0;
+  color: white;
+}
+
+.homeRow {
+  width: 100%;
+  margin: auto;
+}
+
+
+  #main {
+
+  }
+
+/* left section of the Home containing Heading and Order button*/
+.homeTxtCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  text-align: left;
+  font-family: 'Young Serif', serif;
+}
+
+.homeHeading {
+  font-size: 3.4rem;
+  line-height: 1.3em;
+}
+
+
+/* Styles for the Order Button */
+.homeBtn {
+  display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 10px solid #000;
+    padding: 50px 50px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.homeBtn:hover {
+ border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+
+/* CATEGORY SECTION */
+
+#categorySection {
+  padding-top: 1%;
+  background-color: lightblue;
+  padding-bottom: 6%;
+}
+
+#categorySection .container h1 {
+  text-align: center;
+  margin: 50px auto;
+}
+
+#categorySection .container h1 span {
+  font-size: 4.5rem;
+  color: Black;
+  padding: 1px 5px;
+  
+  
+}
+
+.product-box-layout4 {
+  padding: 30px;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4rem;
+
+}
+
+.product-box-layout4:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: -1;
+  transform: rotate(0deg);
+}
+
+.product-box-layout4 .item-figure
+
+/* indivdual card styles */ {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  height: 300px;
+  width: 300%;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* MENU CARD */
+#cafe,
+#cafe2,
+#cafe3 {
+  display: none;
+}
+
+.menuHeading {
+  margin: 0 auto 40px auto;
+  position: relative;
+}
+
+.menuHeading .col-12 h1 {
+  text-align: center;
+  color: snow;
+}
+
+.menuHeading .col-auto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoppingCart {
+  padding-top: 5px;
+  font-size: 1.4rem;
+  color: snow;
+  position: absolute;
+  right: 4rem;
+  top: 1rem;
+}
+
+.shoppingCart i {
+  color: black;
+}
+
+.shoppingCartWithItems {
+  color: #79d70f;
+}
+
+.shoppingCartAfter {
+  position: absolute;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  background-color: #000000;
+  top: 1rem;
+  right: 0px;
+  color: white;
+}
+
+.shoppingCart:hover {
+  cursor: pointer;
+}
+
+.card {
+  display: inline-block;
+  width: 100%;
+  padding: 2rem 1rem 5rem 1rem;
+  background-color: #ffe6cc;
+  position: relative;
+  border: none;
+  color: black;
+}
+
+.card:after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  background-color: skyblue;
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  
+}
+
+.card:before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  margin-right: 10%;
+}
+
+.foodItemName {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  padding-right: 3px;
+}
+
+.card-body {
+  padding: 0 0.6rem;
+}
+
+.foodItemHr {
+  border-top: 0.5px solid #efb473;
+  width: 90%;
+  margin: 5px auto;
+}
+
+.vegIcon {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.nonVegIcon {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.text-muted-small {
+  color: #434b52;
+  margin-bottom: 3px;
+  font-size: 0.85rem;
+}
+
+.addCol {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.quantity {
+  background-color: snow;
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 22px;
+  width: 22px;
+  margin: auto 8px;
+  padding: 5px;
+}
+
+.menuBtn {
+  font-size: 0.75rem;
+}
+
+.menuBtn:hover {
+  cursor: pointer;
+}
+
+.checkOutRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.checkOutRow .knowMoreBtn {
+  background-color: #ffe6cc;
+  font-size: 1.3rem;
+}
+
+
+/* FOOTER SECTION */
+.h2 {
+  color: #ffc107;
+}
+
+footer {
+  background-color: #0d1010;
+  color: #ffc107;
+  padding: 3% 0 2% 0;
+}
+
+.footerHeadingCol {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footerHeadingCol h2 {
+  font-family: "Arial";
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+
+
+
+
+
+/************************ SHOPPING CART CSS ********************/
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-body .container-fluid {
+  padding: 5px;
+}
+
+.paymentInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.checkIcon {
+  font-size: 1.5rem;
+  color: red;
+  margin: auto 7px;
+}
+
+.cartContentDiv {
+  padding: 10px 0 10px 0;
+}
+
+.cartContentRow .col-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.cartContentRow .col-10 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cartQuantity
+
+/* Total number of cart items */ {
+  font-size: 0.8rem;
+}
+
+.cartContentRow .col-2 .text-muted-small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+/* horizontal line after each selected item on cart */
+.cartHr {
+  color: black;
+  width: 90%;
+  margin: 5px auto;
+}
+
+/* Section for total amount on Cart */
+.totalAmountDiv {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  padding-left: 15px;
+}
+
+.totalAmountText {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 1px solid white;
+}
+
+@media screen and (max-width: 992px) {
+  #main{
+    width: 100% !important;
+  }
+  .navbar-nav {
+    background-color: #ffc107;
+    text-align: right;
+    width: 50px;
+    border-radius: 10%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #main{
+    width: 100% !important;
+  }
+  .navbar-brand {
+    font-size: 3rem;
+    margin-bottom: 5px;
+  }
+
+  .homeTxtCol {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .homeHeading {
+    font-size: 3rem;
+  }
+
+  .homeHeading span {
+    font-size: 3.9rem;
+  }
+
+  .homeImgCol {
+    margin: 50px auto 0 auto;
+  }
+
+  .homeImg {
+    width: auto;
+    height: 100%;
+    margin-left: 10px !important;
+  }
+
+  #categorySection {
+    padding: 1% 10px 5%;
+  }
+
+  .product-box-layout4 .item-figure {
+    height: 200px;
+  }
+
+  .col-lg-4.col-sm-6.col-12 .card {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #main{
+    width: 100% !important;
+  }
+  .navbar-brand {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+  }
+
+  .homeHeading {
+    font-size: 2.8rem;
+  }
+
+  .homeHeading span {
+    font-size: 3.6rem;
+  }
+
+  .col-lg-4.col-sm-4.col-4 {
+    padding: 0 6px;
+  }
+
+  .product-box-layout4 .item-figure {
+    height: 130px;
+  }
+
+  .item-content .card-title {
+    font-size: 1.1rem;
+  }
+
+  .product-box-layout4 {
+    padding: 10px;
+  }
+
+  .product-box-layout4 .item-content {
+    padding: 15px 0 0;
+  }
+
+  .col-sm-6.col-12 .card {
+    margin-bottom: 15px;
+  }
+
+  .eatSure {
+    margin-bottom: 30px;
+  }
+
+  
+
+  .footerHeadingCol h2 {
+    font-size: 2.5rem !important;
+  }
+
+  
+}
+
+@media screen and (max-width: 1000px) {
+  .homeHeading {
+    text-align: center;
+  }
+
+  .homeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 32%;
+  }
+
+  .navbar {
+    height: 14vh;
+  }
+
+  .homeTxtCol {
+    padding-top: 73px;
+    margin-top: 30px;
+  }
+
+  .homeImgCol {
+    width: 244px;
+    height: 229px;
+  }
+
+  #categorySection {
+    width: 145vw;
+  }
+
+  #healthySection {
+    width: 145vw;
+  }
+
+  #footer {
+    width: 145vw;
+  }
+}
+
+/* checkout icons */
+.checkIcon {
+  color: green;
+}
+#main{
+  width: 100% !important;
+}
+
+.item-content h2{
+font-size: 1rem;
+}
+#shoppingclass{
+position: relative;
+}
+#zero{
+position: relative !important;
+top: -0.7rem;
+background-color: white !important;
+color: black !important;
+left: -0.2rem;
+}
+#cart{
+ position:  relative !important;
+}
